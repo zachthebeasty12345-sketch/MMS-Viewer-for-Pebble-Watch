@@ -1,0 +1,10 @@
+R_DEF: Internal format may change without notice
+local
+id btn_listener
+id btn_permissions
+id btn_test
+id preview_image
+id status_text
+layout activity_main
+mipmap ic_launcher
+style Theme.MmsViewer

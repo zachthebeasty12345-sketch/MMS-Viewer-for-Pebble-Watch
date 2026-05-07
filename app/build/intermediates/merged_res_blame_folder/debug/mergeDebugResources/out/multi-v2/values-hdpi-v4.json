@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.boxofdanger.mmsviewer.app-mergeDebugResources-35:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\zacht\\.gradle\\caches\\9.4.1\\transforms\\171a9c77ab8f09dac9843cc43c7b5669\\transformed\\appcompat-1.7.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

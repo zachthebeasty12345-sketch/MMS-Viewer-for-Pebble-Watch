@@ -1,0 +1,170 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.boxofdanger.mmsviewer"
+4    android:versionCode="2"
+5    android:versionName="2.0" >
+6
+7    <uses-sdk
+7-->INJECTED
+8        android:minSdkVersion="26"
+8-->INJECTED
+9        android:targetSdkVersion="30" />
+9-->INJECTED
+10
+11    <uses-permission android:name="android.permission.READ_SMS" />
+11-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:4:5-67
+11-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.READ_CONTACTS" />
+12-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:5:5-72
+12-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:5:22-69
+13    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+13-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:6:5-77
+13-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:6:22-74
+14    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+14-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:7:5-94
+14-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:7:22-91
+15    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+15-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:8:5-77
+15-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:8:22-74
+16
+17    <queries>
+17-->[com.github.pebble-dev.PebbleKitAndroid2:client:0.1.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\53a5aa9b0557bae2c9d7b31ff1818bfc\transformed\client-0.1.0\AndroidManifest.xml:8:5-12:15
+18        <intent>
+18-->[com.github.pebble-dev.PebbleKitAndroid2:client:0.1.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\53a5aa9b0557bae2c9d7b31ff1818bfc\transformed\client-0.1.0\AndroidManifest.xml:9:9-11:18
+19            <action android:name="io.rebble.pebblekit2.SEND_DATA_TO_WATCH" />
+19-->[com.github.pebble-dev.PebbleKitAndroid2:client:0.1.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\53a5aa9b0557bae2c9d7b31ff1818bfc\transformed\client-0.1.0\AndroidManifest.xml:10:13-78
+19-->[com.github.pebble-dev.PebbleKitAndroid2:client:0.1.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\53a5aa9b0557bae2c9d7b31ff1818bfc\transformed\client-0.1.0\AndroidManifest.xml:10:21-75
+20        </intent>
+21    </queries>
+22
+23    <permission
+23-->[androidx.core:core:1.17.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\b739276017aaf82425e2a78697b54605\transformed\core-1.17.0\AndroidManifest.xml:22:5-24:47
+24        android:name="com.boxofdanger.mmsviewer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+24-->[androidx.core:core:1.17.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\b739276017aaf82425e2a78697b54605\transformed\core-1.17.0\AndroidManifest.xml:23:9-81
+25        android:protectionLevel="signature" />
+25-->[androidx.core:core:1.17.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\b739276017aaf82425e2a78697b54605\transformed\core-1.17.0\AndroidManifest.xml:24:9-44
+26
+27    <uses-permission android:name="com.boxofdanger.mmsviewer.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+27-->[androidx.core:core:1.17.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\b739276017aaf82425e2a78697b54605\transformed\core-1.17.0\AndroidManifest.xml:26:5-97
+27-->[androidx.core:core:1.17.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\b739276017aaf82425e2a78697b54605\transformed\core-1.17.0\AndroidManifest.xml:26:22-94
+28
+29    <application
+29-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:10:5-36:19
+30        android:allowBackup="true"
+30-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:11:9-35
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.17.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\b739276017aaf82425e2a78697b54605\transformed\core-1.17.0\AndroidManifest.xml:28:18-86
+32        android:debuggable="true"
+33        android:extractNativeLibs="false"
+33-->INJECTED
+34        android:icon="@mipmap/ic_launcher"
+34-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:12:9-43
+35        android:label="MMS Viewer"
+35-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:13:9-35
+36        android:supportsRtl="true"
+36-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:14:9-35
+37        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" >
+37-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:15:9-79
+38        <activity
+38-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:17:9-24:20
+39            android:name="com.boxofdanger.mmsviewer.MainActivity"
+39-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:18:13-41
+40            android:exported="true" >
+40-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:19:13-36
+41            <intent-filter>
+41-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:20:13-23:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:21:17-69
+42-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:21:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:22:17-77
+44-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:22:27-74
+45            </intent-filter>
+46        </activity>
+47
+48        <!-- Notification Listener for MMS interception -->
+49        <service
+49-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:27:9-34:19
+50            android:name="com.boxofdanger.mmsviewer.MmsListenerService"
+50-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:28:13-47
+51            android:exported="true"
+51-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:29:13-36
+52            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+52-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:30:13-87
+53            <intent-filter>
+53-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:31:13-33:29
+54                <action android:name="android.service.notification.NotificationListenerService" />
+54-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:32:17-99
+54-->C:\Users\zacht\OneDrive\Desktop\mmsviewer6\mms-v3-full\app\src\main\AndroidManifest.xml:32:25-96
+55            </intent-filter>
+56        </service>
+57
+58        <provider
+58-->[androidx.emoji2:emoji2:1.3.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\bf57c1bae370bb20378492ec05ef0e3a\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+59            android:name="androidx.startup.InitializationProvider"
+59-->[androidx.emoji2:emoji2:1.3.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\bf57c1bae370bb20378492ec05ef0e3a\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+60            android:authorities="com.boxofdanger.mmsviewer.androidx-startup"
+60-->[androidx.emoji2:emoji2:1.3.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\bf57c1bae370bb20378492ec05ef0e3a\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+61            android:exported="false" >
+61-->[androidx.emoji2:emoji2:1.3.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\bf57c1bae370bb20378492ec05ef0e3a\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+62            <meta-data
+62-->[androidx.emoji2:emoji2:1.3.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\bf57c1bae370bb20378492ec05ef0e3a\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+63                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+63-->[androidx.emoji2:emoji2:1.3.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\bf57c1bae370bb20378492ec05ef0e3a\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+64                android:value="androidx.startup" />
+64-->[androidx.emoji2:emoji2:1.3.0] C:\Users\zacht\.gradle\caches\9.4.1\transforms\bf57c1bae370bb20378492ec05ef0e3a\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+65            <meta-data
+65-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\zacht\.gradle\caches\9.4.1\transforms\fab4a769fdedd20ebba8af618d054b28\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+66                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+66-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\zacht\.gradle\caches\9.4.1\transforms\fab4a769fdedd20ebba8af618d054b28\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+67                android:value="androidx.startup" />
+67-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\zacht\.gradle\caches\9.4.1\transforms\fab4a769fdedd20ebba8af618d054b28\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+68            <meta-data
+68-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+69                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+69-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+70                android:value="androidx.startup" />
+70-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+71        </provider>
+72
+73        <receiver
+73-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+74            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+74-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+75            android:directBootAware="false"
+75-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+76            android:enabled="true"
+76-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+77            android:exported="true"
+77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+78            android:permission="android.permission.DUMP" >
+78-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+79            <intent-filter>
+79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+80                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+81            </intent-filter>
+82            <intent-filter>
+82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+83                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+84            </intent-filter>
+85            <intent-filter>
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+86                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+87            </intent-filter>
+88            <intent-filter>
+88-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+89                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\zacht\.gradle\caches\9.4.1\transforms\88ed431b6a4298cab1df7263c52d698f\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+90            </intent-filter>
+91        </receiver>
+92    </application>
+93
+94</manifest>

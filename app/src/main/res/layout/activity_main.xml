@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="#1a1a2e">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MMS Viewer"
+        android:textSize="28sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Text images → Pebble Time 2"
+        android:textSize="14sp"
+        android:textColor="#888888"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Status panel -->
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        android:textSize="16sp"
+        android:textColor="#cccccc"
+        android:fontFamily="monospace"
+        android:background="#16213e"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Setup buttons -->
+    <Button
+        android:id="@+id/btn_permissions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Grant Permissions"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btn_listener"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable Notification Listener"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btn_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Test Image"
+        android:enabled="false"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Dithered preview -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preview"
+        android:textSize="12sp"
+        android:textColor="#666666"
+        android:layout_marginBottom="4dp" />
+
+    <ImageView
+        android:id="@+id/preview_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="fitCenter"
+        android:background="#000000" />
+
+</LinearLayout>

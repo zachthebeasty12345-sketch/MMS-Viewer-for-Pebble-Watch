@@ -34,6 +34,7 @@ public class MmsListenerService extends NotificationListenerService {
     ));
 
     private PebbleBridge pebbleBridge;
+    private long lastMmsTimestamp = 0;
 
     @Override
     public void onCreate() {
@@ -59,6 +60,13 @@ public class MmsListenerService extends NotificationListenerService {
     }
 
     private void handleNotification(StatusBarNotification sbn) {
+        long now = System.currentTimeMillis();
+        if (now - lastMmsTimestamp < 5000) {
+            Log.d(TAG, "Skipping duplicate notification");
+            return;
+        }
+        lastMmsTimestamp = now;
+
         Bitmap image = null;
         String sender = "";
 

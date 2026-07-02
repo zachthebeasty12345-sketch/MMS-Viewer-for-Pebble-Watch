@@ -93,8 +93,8 @@ public class ImageProcessor {
                 diffuse(rCh, gCh, bCh, w, h, x,     y + 1, errR, errG, errB, 5.0f / 16);
                 diffuse(rCh, gCh, bCh, w, h, x + 1, y + 1, errR, errG, errB, 1.0f / 16);
 
-                // Pack to GColor: 0b11_BB_GG_RR
-                gcolor[idx] = (byte) (0xC0 | (newBI << 4) | (newGI << 2) | newRI);
+                // Pack to GColor: 0b11_RR_GG_BB
+                gcolor[idx] = (byte) (0xC0 | (newRI << 4) | (newGI << 2) | newBI);
             }
         }
 

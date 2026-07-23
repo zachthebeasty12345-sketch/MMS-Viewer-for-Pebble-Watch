@@ -34,7 +34,9 @@ public class MmsListenerService extends NotificationListenerService {
     ));
 
     private PebbleBridge pebbleBridge;
-    private long lastMmsTimestamp = 0;
+    private long lastSentTimestamp = 0;
+    private int lastSentNotificationId = -1;
+    private String lastSentMmsId = null;
 
     @Override
     public void onCreate() {
@@ -60,12 +62,19 @@ public class MmsListenerService extends NotificationListenerService {
     }
 
     private void handleNotification(StatusBarNotification sbn) {
-        long now = System.currentTimeMillis();
-        if (now - lastMmsTimestamp < 5000) {
-            Log.d(TAG, "Skipping duplicate notification");
+        // Skip if we just processed this exact notification
+        int notifId = sbn.getId();
+        if (notifId == lastSentNotificationId) {
+            Log.d(TAG, "Skipping duplicate notification ID: " + notifId);
             return;
         }
-        lastMmsTimestamp = now;
+
+        // Skip if we sent an image very recently
+        long now = System.currentTimeMillis();
+        if (now - lastSentTimestamp < 10000) {
+            Log.d(TAG, "Skipping — sent image less than 10s ago");
+            return;
+        }
 
         Bitmap image = null;
         String sender = "";
@@ -79,16 +88,24 @@ public class MmsListenerService extends NotificationListenerService {
             image = extractBigPicture(extras);
         }
 
+        // Only fall back to MMS content provider if BigPictureStyle had nothing
         if (image == null) {
             try { Thread.sleep(2000); } catch (InterruptedException ignored) {}
-            image = fetchLatestMmsImage();
-            if (image != null && sender.isEmpty()) {
-                sender = fetchLatestMmsSender();
+
+            String latestMmsId = getLatestMmsId();
+            if (latestMmsId != null && !latestMmsId.equals(lastSentMmsId) && isMmsRecent(latestMmsId, 30)) {
+                image = fetchMmsImageById(latestMmsId);
+                if (image != null) {
+                    lastSentMmsId = latestMmsId;
+                    if (sender.isEmpty()) {
+                        sender = fetchLatestMmsSender();
+                    }
+                }
             }
         }
 
         if (image == null) {
-            Log.d(TAG, "No image in notification");
+            Log.d(TAG, "No new image found");
             return;
         }
 
@@ -98,6 +115,8 @@ public class MmsListenerService extends NotificationListenerService {
         try {
             ImageProcessor.Result processed = ImageProcessor.process(image);
             pebbleBridge.sendImage(processed, sender);
+            lastSentTimestamp = System.currentTimeMillis();
+            lastSentNotificationId = notifId;
         } catch (Exception e) {
             Log.e(TAG, "Processing failed", e);
         } finally {
@@ -120,28 +139,59 @@ public class MmsListenerService extends NotificationListenerService {
         return null;
     }
 
-    private Bitmap fetchLatestMmsImage() {
+    private String getLatestMmsId() {
         try {
-            ContentResolver cr = getContentResolver();
-            String mmsId = null;
-            try (Cursor cursor = cr.query(Uri.parse("content://mms"),
-                    new String[]{"_id"}, null, null, "date DESC LIMIT 1")) {
-                if (cursor != null && cursor.moveToFirst()) mmsId = cursor.getString(0);
+            try (Cursor cursor = getContentResolver().query(
+                    Uri.parse("content://mms"),
+                    new String[]{"_id"},
+                    null, null, "date DESC LIMIT 1")) {
+                if (cursor != null && cursor.moveToFirst()) {
+                    return cursor.getString(0);
+                }
             }
-            if (mmsId == null) return null;
-            try (Cursor cursor = cr.query(Uri.parse("content://mms/" + mmsId + "/part"),
-                    new String[]{"_id", "ct", "_data"}, null, null, null)) {
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to get latest MMS ID", e);
+        }
+        return null;
+    }
+
+    private boolean isMmsRecent(String mmsId, int withinSeconds) {
+        try {
+            try (Cursor cursor = getContentResolver().query(
+                    Uri.parse("content://mms"),
+                    new String[]{"date"},
+                    "_id = ?", new String[]{mmsId},
+                    null)) {
+                if (cursor != null && cursor.moveToFirst()) {
+                    long mmsDate = cursor.getLong(0);
+                    // MMS dates are in seconds, not milliseconds
+                    long nowSeconds = System.currentTimeMillis() / 1000;
+                    return (nowSeconds - mmsDate) < withinSeconds;
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to check MMS date", e);
+        }
+        return false;
+    }
+
+    private Bitmap fetchMmsImageById(String mmsId) {
+        try {
+            try (Cursor cursor = getContentResolver().query(
+                    Uri.parse("content://mms/" + mmsId + "/part"),
+                    new String[]{"_id", "ct"},
+                    null, null, null)) {
                 if (cursor == null) return null;
                 while (cursor.moveToNext()) {
                     String partId = cursor.getString(0);
                     String mimeType = cursor.getString(1);
                     if (mimeType != null && mimeType.startsWith("image/")) {
-                        return loadMmsPartImage(cr, partId);
+                        return loadMmsPartImage(getContentResolver(), partId);
                     }
                 }
             }
         } catch (Exception e) {
-            Log.e(TAG, "MMS query failed", e);
+            Log.e(TAG, "Failed to fetch MMS image", e);
         }
         return null;
     }

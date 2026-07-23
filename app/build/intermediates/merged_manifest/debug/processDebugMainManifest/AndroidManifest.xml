@@ -34,7 +34,6 @@
         android:icon="@mipmap/ic_launcher"
         android:label="MMS Viewer"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" >
         <activity
             android:name="com.boxofdanger.mmsviewer.MainActivity"
